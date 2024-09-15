@@ -1,5 +1,8 @@
 import numpy as np
-
+"""
+Esse codigo foi inteiramente feito pelo CHAT GPT.
+É apenas um script de estudo e para ter uma noção de como implementar
+"""
 
 def simplex(c, A, b):
     """
