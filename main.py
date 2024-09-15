@@ -90,3 +90,30 @@ def simplex(tableau):
     for i in range(len(tableau) - 1):
         print(f"x{i+1} = {tableau[i][-1]:.2f}")
     print(f"Valor da função objetivo: {tableau[-1][-1]:.2f}")
+
+
+decision = []
+obj = []
+d, r = size_simplex()
+
+# Coleta da função objetivo
+if choice_min_max() == 1:
+    for y in range(d):
+        obj.append(int(input(f"Coeficiente da variável x{y+1} na função objetivo: ")))
+
+    # Coleta das restrições
+    for y in range(r):
+        decision.append([])
+        for x in range(d + 1):
+            if x == d:
+                decision[y].append(int(input(f"Valor final da restrição {y+1}: ")))
+            else:
+                decision[y].append(int(input(f"Coeficiente da variável x{x+1} na restrição {y+1}: ")))
+
+# Montar o tableau inicial
+tableau = tableau(obj, decision, d, r)
+print("=-"*20)
+
+# Resolver usando o método Simplex
+
+simplex(tableau)
