@@ -1,17 +1,30 @@
-header = []
-header_number = [] 
-max_min = int(input("é um problema de Maximização ou Minimização: (1 ou 0) "))
-i = int(input("Quantas icnonitas "))
-if max_min == 1:
-   for x in range(0, i): 
-        header.append(input("Icnonita:"))
-    if int(input("deseja adiconar mais um? (1 S / 0 N) ")) == 0:
-        header_number.append(int("Apenas o coeficiênte "))
-    if int(input("deseja adiconar mais um? (1 S / 0 N) ")) == 0:
-        break
+def choice_min_max():
+    escolha = int(input("1 para Max 2 para Min"))
+    return escolha
 
-    elif max_min == 0:
+def size_simplex():
+    d = int(input("Número de variáveis de decisão: "))
+    r = int(input("Número de restrições: "))
+    return(d, r)
 
-for i in range(0, len(funcao_objetiva)):
-    for j in funcao_objetiva[i]:
-        x = funcao_objetiva[i]
+decision = list()
+obj = list()
+d, r = size_simplex() 
+
+if choice_min_max() == 1:
+   for y in range(0, d): 
+        obj.append(int(input("Valor do objetivo: ")))
+
+        
+   for y in range(0,r):
+      decision.append([])
+      for x in range(0, d+1):
+         if x == d:
+            decision[y].append(int(input("Valor final da restrição: ")))
+         else:
+            decision[y].append(int(input("Valor variavel de restrição")))
+
+print(decision)        
+'''  if escolha() == 2:
+       
+    elif max_min == 0:'''
